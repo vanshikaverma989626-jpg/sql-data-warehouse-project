@@ -32,10 +32,9 @@ BEGIN
         SET @start_time =  GETDATE();
         PRINT '>> Truncating Table: bronze.crm_cust_info';
         TRUNCATE TABLE bronze.crm_cust_info;
-        
         PRINT '>> Inserting Data Into: bronze.crm_cust_info';
         BULK INSERT bronze.crm_cust_info
-        FROM 'C:\Users\vansh\AppData\Local\Temp\85f7d469-e40e-4bd1-8a28-3954f595d192_sql-data-warehouse-project.zip.192\sql-data-warehouse-project\datasets\source_crm\cust_info.csv'
+        FROM 'C:\Users\vansh\AppData\Local\Temp\37d4af7a-699b-4b8f-ab95-ffe4387d6027_sql-data-warehouse-project.zip.027\sql-data-warehouse-project\datasets\source_crm\cust_info.csv'
         WITH (
             FIRSTROW=2 ,--SKIP THE FIRST ROW(SINCE THAT IS THE COLUMN NAMES)
             FIELDTERMINATOR =',',
@@ -49,10 +48,9 @@ BEGIN
         SET @start_time =  GETDATE();
         PRINT '>> Truncating Table: bronze.crm_prd_info';
         TRUNCATE TABLE bronze.crm_prd_info;
-        
         PRINT '>> Inserting Data Into: bronze.crm_prd_info';
         BULK INSERT bronze.crm_prd_info
-        FROM 'C:\Users\vansh\AppData\Local\Temp\eec973a5-4383-4386-8f0d-319af8cc06f9_sql-data-warehouse-project.zip.6f9\sql-data-warehouse-project\datasets\source_crm\prd_info.csv'
+        FROM 'C:\Users\vansh\AppData\Local\Temp\6e19fb76-7ca4-4ead-997c-37b3b991164c_sql-data-warehouse-project.zip.64c\sql-data-warehouse-project\datasets\source_crm\prd_info.csv'
         WITH (
             FIRSTROW=2 ,--SKIP THE FIRST ROW(SINCE THAT IS THE COLUMN NAMES)
             FIELDTERMINATOR =',',
@@ -66,10 +64,9 @@ BEGIN
         SET @start_time =  GETDATE();
         PRINT '>> Truncating Table: bronze.crm_sales_details';
         TRUNCATE TABLE bronze.crm_sales_details;
-        
         PRINT '>> Inserting Data Into: bronze.crm_sales_details';
         BULK INSERT bronze.crm_sales_details
-        FROM 'C:\Users\vansh\AppData\Local\Temp\b5d24ed2-bfd1-48ab-a8a3-d81de38adb5d_sql-data-warehouse-project.zip.b5d\sql-data-warehouse-project\datasets\source_crm\sales_details.csv'
+        FROM 'C:\Users\vansh\AppData\Local\Temp\fc73c085-d880-4395-bd35-f7f32970161a_sql-data-warehouse-project.zip.61a\sql-data-warehouse-project\datasets\source_crm\sales_details.csv'
         WITH (
             FIRSTROW=2 ,--SKIP THE FIRST ROW(SINCE THAT IS THE COLUMN NAMES)
             FIELDTERMINATOR =',',
@@ -87,10 +84,9 @@ BEGIN
         SET @start_time =  GETDATE();
         PRINT '>> Truncating Table: bronze.erp_loc_a101';
         TRUNCATE TABLE bronze.erp_loc_a101;
-        
         PRINT '>> Inserting Data Into: bronze.erp_loc_a101';
         BULK INSERT bronze.erp_loc_a101
-        FROM 'C:\Users\vansh\AppData\Local\Temp\dabe24aa-a0af-47e0-a905-b19db8a6b105_sql-data-warehouse-project.zip.105\sql-data-warehouse-project\datasets\source_erp\LOC_A101.csv'
+        FROM 'C:\Users\vansh\AppData\Local\Temp\45c5cae5-e606-4eef-bc2e-5a9dce4cdb5b_sql-data-warehouse-project.zip.b5b\sql-data-warehouse-project\datasets\source_erp\LOC_A101.csv'
         WITH (
             FIRSTROW=2 ,--SKIP THE FIRST ROW(SINCE THAT IS THE COLUMN NAMES)
             FIELDTERMINATOR =',',
@@ -104,10 +100,9 @@ BEGIN
         SET @start_time =  GETDATE();
         PRINT '>> Truncating Table: bronze.erp_cust_az12';
         TRUNCATE TABLE bronze.erp_cust_az12;
-        
         PRINT '>> Inserting Data Into: bronze.erp_cust_az12';
         BULK INSERT bronze.erp_cust_az12
-        FROM 'C:\Users\vansh\AppData\Local\Temp\afff3bd0-332b-4f9a-a384-0e779ccd7842_sql-data-warehouse-project.zip.842\sql-data-warehouse-project\datasets\source_erp\CUST_AZ12.csv'
+        FROM 'C:\Users\vansh\AppData\Local\Temp\2cd90f51-75be-43a4-b957-8ed60029081a_sql-data-warehouse-project.zip.81a\sql-data-warehouse-project\datasets\source_erp\CUST_AZ12.csv'
         WITH (
             FIRSTROW=2 ,--SKIP THE FIRST ROW(SINCE THAT IS THE COLUMN NAMES)
             FIELDTERMINATOR =',',
@@ -121,10 +116,9 @@ BEGIN
          SET @start_time =  GETDATE();
         PRINT '>> Truncating Table: bronze.erp_px_cat_giv2';
         TRUNCATE TABLE bronze.erp_px_cat_giv2;
-        
         PRINT '>> Inserting Data Into: bronze.erp_px_cat_giv2';
         BULK INSERT bronze.erp_px_cat_giv2
-        FROM 'C:\Users\vansh\AppData\Local\Temp\c404e29d-9236-4a31-b317-8d4e37a6b8ad_sql-data-warehouse-project.zip.8ad\sql-data-warehouse-project\datasets\source_erp\PX_CAT_G1V2.csv'
+        FROM 'C:\Users\vansh\AppData\Local\Temp\51d9c5f3-05d8-4148-9444-5c498b87cf2b_sql-data-warehouse-project.zip.f2b\sql-data-warehouse-project\datasets\source_erp\PX_CAT_G1V2.csv'
         WITH (
             FIRSTROW=2 ,--SKIP THE FIRST ROW(SINCE THAT IS THE COLUMN NAMES)
             FIELDTERMINATOR =',',
@@ -146,9 +140,11 @@ BEGIN
         PRINT '==========================================================='
         PRINT 'ERROR OCCURED DURING LOADING BRONZE LAYER'
         PRINT 'Error Message' + ERROR_MESSAGE();
-		    PRINT 'Error Message' + CAST (ERROR_NUMBER() AS NVARCHAR);
-		    PRINT 'Error Message' + CAST (ERROR_STATE() AS NVARCHAR);
+		PRINT 'Error Message' + CAST (ERROR_NUMBER() AS NVARCHAR);
+		PRINT 'Error Message' + CAST (ERROR_STATE() AS NVARCHAR);
         PRINT '==========================================================='
     END CATCH
 END
+
+
 
